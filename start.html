@@ -10,11 +10,11 @@
 </head>
 <body>
   <header class="header header--main">
-    <div class="header__logo">
+    <div class="header__top">
       <a href="#" class="header__logo-link">Template</a>
       <div class="header--right">
-        <a href="#" class="header__login-link">E-mail sign up</a>
-        <a href="#" class="header__bag-link"><i class="icon-bag"></i>Bag (<span class="bag-count">0</span>)</a>
+        <a href="#" class="header-link">E-mail sign up</a>
+        <a href="#" class="header-link"><img src="img/icon_bag.png" alt="Bag" class="icon-bag">Bag (<span class="bag-count">0</span>)</a>
       </div>
     </div>
     <div class="header__navigation">
@@ -33,7 +33,7 @@
       <div class="header__search">
         <form action="#" method="get">
           <input type="text" class="search" placeholder="Style name">
-          <button class="btn-search">Search</button>
+          <button type="submit" class="btn-search"><img src="img/icon_search.png" alt=""></button>
         </form>
       </div>
     </div>
@@ -41,7 +41,7 @@
 
   <section class="slider">
     <div class="slider__list">
-      <div class="slider__item">
+      <div class="slider__item active">
         <a class="slider__item-link" href="#"><img src="img/slider/1.jpg" alt="Slider item"></a>
       </div>
       <div class="slider__item">
@@ -52,24 +52,26 @@
       </div>
     </div>
     <div class="slider__list--arrow">
-      <button type="button" class="slider__arrow slider__arrow--prev">Prev
-        <span class="icon"></span>
-      </button>
-      <button type="button" class="slider__arrow slider__arrow--next">Next
-        <span class="icon"></span>
-      </button>
+      <div class="slider__arrow slider__arrow--prev" onclick="slider.left()"><</div>
+      <div class="slider__arrow slider__arrow--next" onclick="slider.right()">></div>
     </div>
+    <ul class="slider__buttons">
+    </ul>
   </section>
 
-  <section class="banner">
-    <div class="banner__left">
+  <section class="banners">
+    <div class="banner">
       <a class="banner__item-link" href="#"><img src="/img/banners/banner_left.jpg" alt="Banner left"></a>
-      <div class="banner__title">Nike Red</div>
+      <div class="banner__properties">
+        <div class="banner__title">Nike Red</div>
+      </div>
     </div>
-    <div class="banner__right">
+    <div class="banner">
       <a class="banner__item-link" href="#"><img src="/img/banners/banner_right.jpg" alt="Banner right"></a>
-      <div class="banner__title">Caps & Hats</div>
-      <div class="banner__description">Sale -50%</div>
+      <div class="banner__properties">
+        <div class="banner__title">Caps & Hats</div>
+        <div class="banner__description">Sale -50%</div>
+      </div>
     </div>
   </section>
 
@@ -81,40 +83,38 @@
           <img src="img/product1.jpg" alt="Latest product name">
         </div>
         <div class="new-products__label">New</div>
-        <div class="new-products__title">
+        <div class="new-products__item-title">
           <a class="new-products__link" href="#">Only Skinny Jeans</a>
         </div>
         <div class="new-products__price">$65.50</div>
       </div>
       <div class="new-products__item">
         <div class="new-products__img">
-          <img src="img/product1.jpg" alt="Latest product name">
+          <img src="img/product2.jpg" alt="Latest product name">
         </div>
         <div class="new-products__label">New</div>
-        <div class="new-products__title">
+        <div class="new-products__item-title">
           <a class="new-products__link" href="#">Turtle Neck Jumper in Rib</a>
         </div>
         <div class="new-products__price">$130.25</div>
       </div>
       <div class="new-products__item">
         <div class="new-products__img">
-          <img src="img/product1.jpg" alt="Latest product name">
+          <img src="img/product3.jpg" alt="Latest product name">
         </div>
-        <div class="new-products__label">New</div>
-        <div class="new-products__title">
-          <a class="new-products__link" href="#">Only Skinny Jeans</a>
+        <div class="new-products__item-title">
+          <a class="new-products__link" href="#">Turtle Neck Jumper in Rib</a>
         </div>
-        <div class="new-products__price">$65.50</div>
+        <div class="new-products__price">$130.25</div>
       </div>
       <div class="new-products__item">
         <div class="new-products__img">
-          <img src="img/product1.jpg" alt="Latest product name">
+          <img src="img/product4.jpg" alt="Latest product name">
         </div>
-        <div class="new-products__label">New</div>
-        <div class="new-products__title">
-          <a class="new-products__link" href="#">Only Skinny Jeans</a>
+        <div class="new-products__item-title">
+          <a class="new-products__link" href="#">With Patchwork Crochet</a>
         </div>
-        <div class="new-products__price">$65.50</div>
+        <div class="new-products__price">$80.60</div>
       </div>
     </div>
     <div class="new-products__all-products">All arrivals</div>
@@ -178,5 +178,6 @@
       </div>
     </div>
   </footer>
+  <script src="js/start.js"></script>
 </body>
 </html>
