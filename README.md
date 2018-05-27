@@ -1,1 +1,1 @@
-# final_project
+# It is a final project on courses
