@@ -3,10 +3,14 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
 
 html {
-
+    width: 100%;
 }
 
 body {
+    margin: 0 auto;
+    width: 1180px;
+    max-width: 1300px;
     font-family: 'Roboto', sans-serif;
 }
+
 
