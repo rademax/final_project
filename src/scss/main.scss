@@ -1,0 +1,12 @@
+@import "variables.scss";
+@import "global/normalize.scss";
+@import "global/global-scaffolding.scss";
+
+@import "../fonts/font.scss";
+
+@import "../_blocks/btn/btn.scss";
+@import "../_blocks/header/header.scss";
+@import "../_blocks/banners/banners";
+@import "../_blocks/slider/slider";
+@import "../_blocks/new_products/new_products";
+@import "../_blocks/footer/footer.scss";
