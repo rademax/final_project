@@ -1,16 +1,10 @@
 @charset "UTF-8";
 
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
-
 html {
     width: 100%;
 }
 
 body {
-    margin: 0 auto;
-    min-width: 1006px;
-    width: auto;
-    max-width: 1300px;
     font-family: 'Roboto', sans-serif;
     font-size: 10px;
 }
@@ -20,10 +14,12 @@ a {
     color: #000000;
 }
 
-.header {
-    min-width: 1006px;
-    width: auto;
+.wrap {
+    margin: 0 auto;
     max-width: 1180px;
+}
+
+.header {
     margin: 0 auto;
     padding-top: 20px;
 }
@@ -80,8 +76,7 @@ a {
 
 .menu__list li {
     display: inline;
-    /*padding-right: 60px;*/
-    padding-right: 4em;
+    margin-right: 4em;
 }
 
 .menu__list li:last-child {
@@ -108,12 +103,14 @@ a {
 }
 
 .slider {
-    position: relative;
+    margin: 0 auto;
     max-width: 1300px;
+    position: relative;
 }
 
 .slider__list {
-    border: 1px solid #e5e5e5;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
 }
 
 .slider__item {
@@ -129,6 +126,7 @@ a {
 }
 
 .slider__item-link img {
+    display: block;
     text-align: center;
     min-width: 1006px;
     width: 100%;
@@ -141,7 +139,7 @@ a {
     justify-content: center;
     align-items: center;
     text-align: center;
-    top: 330px;
+    top: calc(50% - 110px);
     height: 110px;
     width: 35px;
     color: #ffffff;
@@ -187,8 +185,9 @@ a {
 
 .banner {
     position: relative;
-    width: 52%;
-    border: 1px solid #e5e5e5;
+    width: 50%;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
 }
 
 .banner__properties {
@@ -213,6 +212,7 @@ a {
 }
 
 .banner__item-link img {
+    display: block;
     width: 100%;
 }
 
@@ -276,7 +276,6 @@ a {
 }
 
 .new-products__all-products {
-
     margin: 120px auto 0;
     display: block;
     box-sizing: border-box;
@@ -296,15 +295,46 @@ a {
 .footer__navigation {
     display: flex;
     justify-content: space-between;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.footer__left, .footer__right {
+    width: 50%;
+    padding-bottom: 70px;
 }
 
 .footer__left {
     display: flex;
     justify-content: space-between;
+    border-right: 1px solid #e5e5e5;
 }
 
-.footer__right {
+.footer__menu {
+    width: 50%;
+}
 
+.footer__title {
+    margin-top: 60px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1.6em;
+}
+
+.footer__menu-list {
+    margin-top: 50px;
+    padding-left: 0;
+}
+
+.footer__menu-list li {
+    list-style: none;
+    margin-bottom: 25px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.4em;
+}
+
+.footer__menu-list a:hover {
+    border-bottom: 1px solid #000000;
 }
 
 .footer__contacts {
@@ -314,9 +344,82 @@ a {
 
 .footer__additional {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .footer__links-list li {
     display: inline-block;
+}
+
+.footer__right {
+    box-sizing: border-box;
+    padding-left: 50px;
+}
+
+.footer__block {
+    width: 50%;
+    /*padding-left: 50px;*/
+}
+
+.footer__link-tweet, .footer__link-phone {
+    display: inline-block;
+    margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.4em;
+}
+
+.footer__link-tweet span {
+    font-weight: 700;
+}
+
+.footer__description {
+    margin-top: 80px;
+    width: 305px;
+    font-family: 'Times New Roman', sans-serif;
+    font-style: italic;
+    font-size: 1.6em;
+}
+
+.footer__social {
+    margin-top: 35px;
+}
+
+.footer__social .footer__link {
+    margin-right: 25px;
+}
+
+.footer__additional {
+    padding: 20px 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.footer__share-link {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.8em;
+}
+
+.footer__share-link .counter {
+    display: inline-block;
+    width: 45px;
+    height: 20px;
+    padding-top: 5px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.footer__share-link .counter {
+    background-image: url('../img/share_bg.png');
+}
+
+.footer__links-list li {
+    padding-right: 30px;
+}
+
+.footer__links-list li:last-child {
+    padding-right: 0;
 }
