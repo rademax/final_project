@@ -1,5 +1,5 @@
 .footer {
-    margin-top: 75px;
+    //margin-top: 75px;
 }
 
 .footer__navigation {
@@ -85,7 +85,7 @@
 
 .footer__description {
     margin-top: 80px;
-    width: 305px;
+    max-width: 305px;
     font-family: 'Times New Roman', sans-serif;
     font-style: italic;
     font-size: 1.6em;

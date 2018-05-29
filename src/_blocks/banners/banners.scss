@@ -1,19 +1,26 @@
 .banners {
     display: flex;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.banners img {
+    display: block;
 }
 
 .banner {
     position: relative;
     width: 50%;
-    border-top: 1px solid #e5e5e5;
-    border-bottom: 1px solid #e5e5e5;
+}
+
+.banner .banners {
+  border: 0;
 }
 
 .banner__properties {
     position: absolute;
     top: 60px;
     right: 95px;
-    text-align: center;
 }
 
 .banner__title {
@@ -23,14 +30,47 @@
 }
 
 .banner__description {
-    padding-top: 10px;
-    font-family: 'Times New Roman', sans-serif;
-    font-style: italic;
-    font-size: 1.6em;
-    color: #757575;
+  padding-top: 10px;
+  text-align: center;
+  font-family: 'Times New Roman', sans-serif;
+  font-style: italic;
+  font-size: 1.6em;
+  color: #757575;
+}
+
+.banner__left .banner__properties,
+.banner__right .banner__properties {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  top: 70%;
+  right: 0;
+  text-align: center;
+}
+
+.banners__catalog .banner__title,
+.banners__catalog .banner__description {
+  color: #ffffff;
+}
+
+.banner__right .banner__title {
+  color: #f14a58;
+}
+
+.banner__right .banner__description {
+  color: #757575;
+}
+
+.banner__item-link {
+  display: block;
 }
 
 .banner__item-link img {
     display: block;
     width: 100%;
+}
+
+.banners__catalog {
+  margin: 0 auto;
+  max-width: 1300px;
 }

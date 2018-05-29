@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-  <title></title>
+  <title>Template Index page</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
   @@include("_blocks/head/head.html")
 </head>
 <body>
-  @@include("_blocks/header/header.html")
+  <div class="wrap">
+    @@include("_blocks/header/header.html")
+  </div>
   @@include("_blocks/slider/slider.html")
 	<div class="wrap">
 		@@include("_blocks/banners/banners.html")
-		@@include("_blocks/new_products/new_products.html")
+		@@include("_blocks/products/new_products.html")
 		@@include("_blocks/footer/footer.html")
 	</div>
   @@include("_blocks/bottom/bottom.html")

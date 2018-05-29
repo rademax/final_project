@@ -1,3 +1,17 @@
 .btn {
+  margin: 40px auto 0;
+  display: block;
+  box-sizing: border-box;
+  text-align: center;
+  width: 340px;
+  padding: 25px 100px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 2.4em;
+  border: 1px solid #e5e5e5;
+}
 
+.btn:hover {
+  color: #f14a58;
+  border: 1px solid #f14a58;
 }
