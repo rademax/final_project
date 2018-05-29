@@ -1,6 +1,8 @@
 .filters {
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
 }
 
 .filters__list {
@@ -12,14 +14,16 @@
   position: relative;
   display: inline-block;
   padding: 20px 0;
-  width: 16%;
+  width: calc(17% - 4px);
   vertical-align: middle;
-  border: 1px solid #e5e5e5;
-  border-right: 0;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  //border: 1px solid #e5e5e5;
+  //border-right: 0;
 }
 
 .filters__list>li:last-child {
-  border: 1px solid #e5e5e5;
+  //border-right: 1px solid #e5e5e5;
 }
 
 .filter__name {
@@ -49,6 +53,11 @@
 .filters__sub-list li:hover {
   background-color: #f7f7f7;
   color: #f14a58;
+}
+
+.filters__list>li:hover {
+  border-left: 1px solid #e5e5e5;
+  border-right: 1px solid #e5e5e5;
 }
 
 .filters__list>li:hover .filters__sub-list {
