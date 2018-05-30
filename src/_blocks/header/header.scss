@@ -53,6 +53,10 @@
     font-size: 1.3em;
 }
 
+.menu__list .active a {
+    color: #f14a58;
+}
+
 .menu__list li {
     display: inline;
     margin-right: 4em;

@@ -1,0 +1,104 @@
+.product {
+  display: flex;
+  margin-bottom: 150px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.product__album, .product__information {
+  width: 50%;
+}
+
+.product__album-main {
+
+}
+
+.product__album-additional {
+  font-size: 0;
+}
+
+.product__additional-photo {
+  display: inline-block;
+  width: calc(100% / 3);
+}
+
+.product__information {
+  padding-left: 45px;
+}
+
+.product__title {
+  padding: 20px 0;
+  font-weight: 700;
+  font-size: 2.6em;
+}
+
+.product__description {
+  line-height: 1.5em;
+  font-family: 'Times New Roman', sans-serif;
+  font-style: italic;
+  font-size: 1.6em;
+}
+
+.product__price {
+  padding: 45px 0;
+  font-size: 2.5em;
+}
+
+.product__filter {
+
+}
+
+.product__filter-name {
+  display: inline-block;
+  font-size: 1.2em;
+}
+
+.product__filter-list {
+  display: inline-block;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.4em;
+}
+
+.product__filter-list li {
+  display: inline-block;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.product__filter-list .active {
+  border: 1px solid #e5e5e5;
+}
+
+.bag-item {
+  display: flex;
+  width: 50%;
+}
+
+.bag-item__img {
+  width: 240px;
+}
+
+.bag-item__img img {
+  width: 240px;
+}
+
+.bag-item__information {
+  margin-left: 15px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.bag-item-title {
+  padding: 10px 0;
+  font-weight: 700;
+  font-size: 1.4em;
+}
+
+.bag-item__current-price {
+  font-weight: 700;
+  font-size: 1.6em;
+  margin-bottom: 35px;
+}
+
+.bag-item__param {
+  font-size: 1.2em;
+}

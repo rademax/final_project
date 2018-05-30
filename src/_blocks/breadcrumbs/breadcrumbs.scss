@@ -12,3 +12,9 @@
 .breadcrumbs__item-link::before {
   content: '< ';
 }
+
+.breadcrumbs__item-title {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.6em;
+}
