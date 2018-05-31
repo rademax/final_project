@@ -87,3 +87,15 @@
 .filters__list>li:hover .filters__sub-list {
   display: block;
 }
+
+@media (min-width:768px) and (max-width:1023px) {
+  .filters {
+    display: none;
+  }
+}
+
+@media (max-width:767px) {
+  .filters {
+    display: none;
+  }
+}
