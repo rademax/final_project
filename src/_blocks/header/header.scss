@@ -64,7 +64,7 @@
 
 .menu__list li {
     display: inline;
-    margin-right: 4em;
+    margin-right: 3.7em;
 }
 
 .menu__list li:last-child {
@@ -104,9 +104,13 @@
   display: none;
 }
 
+.menu__burger-checkbox, .menu__burger {
+  display: none;
+}
+
 @media (min-width:768px) and (max-width:1023px) {
   .menu__list li {
-    margin-right: 1.8em;
+    margin-right: 1.7em;
   }
 
   .header__search {
@@ -147,11 +151,77 @@
 }
 
 @media (max-width:767px) {
+  .header {
+    padding-top: 10px;
+    height: 70px;
+  }
+
+  .header--right {
+    padding-top: 15px;
+  }
+
   .header__logo-link {
     display: none;
   }
 
   .header__logo-mob {
+    display: block;
+  }
+
+  .header-link:first-child {
+    display: none;
+  }
+
+  .header-link {
+    margin-right: 50px;
+  }
+
+  .header__search {
+    display: none;
+  }
+
+  .header--main.wrap {
+    width: 100%;
+  }
+
+  .menu {
+    position: absolute;
+    display: none;
+    width: 100%;
+    top: -5px;
+    left: 0;
+    background: #ffffff;
+    z-index: 100;
+  }
+
+  .menu__list li {
+    display: block;
+    padding: 15px 15px 15px 8%;
+    font-size: 24px;
+  }
+
+  .menu__burger {
+    position: absolute;
+    display: block;
+    top: -50px;
+    right: 7%;
+    width: 15px;
+    height: 15px;
+    font-size: 0;
+    background: url('../img/icon_menu.png') no-repeat;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .menu__burger-checkbox {
+    display: none;
+  }
+
+  .menu__burger-checkbox:checked + .menu__burger {
+    background-image: url("../img/icon_close.png");
+  }
+
+  .menu__burger-checkbox:checked ~ .menu {
     display: block;
   }
 }
