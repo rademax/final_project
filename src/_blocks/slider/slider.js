@@ -1,3 +1,5 @@
+var timer;
+
 let slider = {
     slides: document.getElementsByClassName('slider__item'),
     slider_items: document.getElementsByClassName('slider__buttons')[0],
@@ -40,17 +42,29 @@ let slider = {
         this.current--;
         if(this.current < 0) this.current = this.slides.length - 1;
         this.set(this.current);
+
+        clearInterval(timer);
+        timer = slideChange();
+
     },
     right: function() {
         this.current++;
         if(this.current === this.slides.length) this.current = 0;
         this.set(this.current);
+
+
+      clearInterval(timer);
+      timer = slideChange();
     }
 };
 
 window.onload = function() {
     slider.init();
-    setInterval(function() {
-        slider.right();
-    }, 10000);
+    timer = slideChange();
 };
+
+function slideChange() {
+  return setInterval(function() {
+    slider.right();
+  }, 10000)
+}

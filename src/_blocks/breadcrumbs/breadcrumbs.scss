@@ -19,3 +19,9 @@
   font-weight: 700;
   font-size: 1.6em;
 }
+
+@media (max-width: 767px) {
+  .breadcrumbs {
+    margin-bottom: 10px;
+  }
+}

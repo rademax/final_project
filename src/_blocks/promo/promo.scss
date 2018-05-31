@@ -1,9 +1,11 @@
 .promo {
   margin-top: 10px;
+  margin-bottom: 95px;
 }
 
 .promo__title {
   text-align: center;
+  line-height: 1.7em;
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   font-size: 2.4em;
@@ -15,7 +17,34 @@
 
 .promo__description {
   text-align: center;
+  line-height: 2em;
   font-family: 'Times New Roman', sans-serif;
   font-style: italic;
   font-size: 1.6em;
+}
+
+@media (min-width:768px) and (max-width:1023px) {
+  .promo__title {
+    margin: 0 auto 15px;
+    width: 500px;
+  }
+
+  .promo__description {
+    margin: 0 auto;
+    width: 550px;
+  }
+}
+
+@media (max-width:767px) {
+  .promo {
+    margin-bottom: 75px;
+  }
+
+  .promo__title {
+    font-size: 1.8em;
+  }
+
+  .promo__description {
+    font-size: 1.4em;
+  }
 }

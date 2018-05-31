@@ -73,3 +73,13 @@
 .slider__buttons li.active {
     background: #f14a58;
 }
+
+@media (max-width: 767px) {
+  .slider__list--arrow {
+    display: none;
+  }
+
+  .slider__buttons {
+    height: 55px;
+  }
+}
