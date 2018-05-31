@@ -116,3 +116,58 @@
 .products__all-products {
   margin-bottom: 75px;
 }
+
+.bag-item {
+  display: flex;
+  width: 50%;
+  margin-bottom: 90px;
+}
+
+.bag-item__img {
+  width: 240px;
+}
+
+.bag-item__img img {
+  width: 240px;
+}
+
+.bag-item__information {
+  margin-left: 25px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.bag-item-title {
+  padding: 10px 0;
+  font-weight: 700;
+  font-size: 1.4em;
+}
+
+.bag-item__current-price {
+  font-weight: 700;
+  font-size: 1.6em;
+}
+
+.bag-item__params {
+  margin: 35px 0;
+}
+
+.bag-item__param {
+  font-size: 1.2em;
+  line-height: 2em;
+}
+
+.bag-item__param span {
+  padding-left: 5px;
+}
+
+.bag__quantity-minus, .bag__quantity-plus {
+  padding-left: 5px;
+  cursor: pointer;
+}
+
+.bag-item__remove {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.3em;
+  color: #f14a58;
+}

@@ -1,12 +1,11 @@
 .footer {
-    //margin-top: 75px;
+  margin: 0 auto;
+  max-width: 1300px;
 }
 
 .footer__navigation {
     display: flex;
     justify-content: space-between;
-    border-top: 1px solid #e5e5e5;
-    border-bottom: 1px solid #e5e5e5;
 }
 
 .footer__left, .footer__right {

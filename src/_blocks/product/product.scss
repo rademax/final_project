@@ -68,37 +68,3 @@
 .product__filter-list .active {
   border: 1px solid #e5e5e5;
 }
-
-.bag-item {
-  display: flex;
-  width: 50%;
-}
-
-.bag-item__img {
-  width: 240px;
-}
-
-.bag-item__img img {
-  width: 240px;
-}
-
-.bag-item__information {
-  margin-left: 15px;
-  font-family: 'Roboto', sans-serif;
-}
-
-.bag-item-title {
-  padding: 10px 0;
-  font-weight: 700;
-  font-size: 1.4em;
-}
-
-.bag-item__current-price {
-  font-weight: 700;
-  font-size: 1.6em;
-  margin-bottom: 35px;
-}
-
-.bag-item__param {
-  font-size: 1.2em;
-}
