@@ -1,0 +1,43 @@
+.bag {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px 0 50px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
+.bag_clear {
+  margin-left: 30px;
+  font-size: 1.3em;
+}
+
+.bag_buy {
+  margin: 0 auto;
+}
+
+.bag_total {
+  margin-right: 30px;
+}
+
+.bag_total-title {
+  text-align: right;
+  font-size: 1.3em;
+  font-weight: 400;
+}
+
+.bag_total-sum {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.8em;
+}
+
+@media (max-width: 767px) {
+  .bag_clear {
+    margin-left: 0;
+  }
+
+  .bag_total {
+    margin-right: 0;
+  }
+}

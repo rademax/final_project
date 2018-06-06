@@ -1,0 +1,28 @@
+.breadcrumbs {
+  max-width: 1300px;
+  margin: 25px auto 55px;
+  padding: 25px 0 25px 20px;
+}
+
+.breadcrumbs__item-link {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.6em;
+}
+
+.breadcrumbs__item-link::before {
+  content: '< ';
+}
+
+.breadcrumbs__item-title {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.6em;
+}
+
+@media (max-width: 767px) {
+  .breadcrumbs {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+}

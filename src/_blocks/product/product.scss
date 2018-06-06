@@ -1,0 +1,155 @@
+.product {
+  display: flex;
+  margin-bottom: 150px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.product__album, .product__information {
+  width: 50%;
+}
+
+.product__album-main {
+
+}
+
+.product__album-additional {
+  font-size: 0;
+}
+
+.product__additional-photo {
+  display: inline-block;
+  width: calc(100% / 3);
+}
+
+.product__information {
+  padding-left: 45px;
+}
+
+.product__title {
+  padding: 20px 0;
+  font-weight: 700;
+  font-size: 2.6em;
+}
+
+.product__description {
+  line-height: 1.5em;
+  font-family: 'Times New Roman', sans-serif;
+  font-style: italic;
+  font-size: 1.6em;
+}
+
+.product__price {
+  padding: 45px 0;
+  font-size: 2.5em;
+}
+
+.product__filter {
+
+}
+
+.product__filter-name {
+  display: inline-block;
+  font-size: 1.2em;
+}
+
+.product__filter-list {
+  display: inline-block;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.4em;
+}
+
+.product__filter-list li {
+  display: inline-block;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.product__filter-list .active {
+  border: 1px solid #e5e5e5;
+}
+
+@media (min-width:768px) and (max-width:1023px) {
+  .product {
+    flex-direction: column;
+  }
+
+  .product__album, .product__information {
+    width: 100%;
+  }
+
+  .product__information {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .product__information-main {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .product__price {
+    padding: 10px 0 20px;
+  }
+
+  .product__description {
+    margin: 0 auto;
+    padding-bottom: 20px;
+    width: 500px;
+  }
+
+  .product__add-to-bag {
+    margin-top: 90px;
+  }
+}
+
+
+@media (max-width:767px) {
+  .product {
+    flex-direction: column;
+    margin-bottom: 100px;
+  }
+
+  .product__album, .product__information {
+    width: 100%;
+  }
+
+  .product__information {
+    margin-top: 50px;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .product__title {
+    font-size: 2em;
+  }
+
+  .product__information-main {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .product__price {
+    padding: 10px 0 20px;
+    font-size: 1.8em;
+  }
+
+  .product__description {
+    margin: 0 auto;
+    padding-bottom: 20px;
+    line-height: 2.5em;
+    font-size: 1.4em;
+  }
+
+  .product__filter {
+    text-align: left;
+  }
+
+  .product__add-to-bag {
+    margin-top: 90px;
+  }
+
+  .product__add-to-bag {
+    margin-top: 45px;
+  }
+}

@@ -1,0 +1,136 @@
+.banners {
+    display: flex;
+    max-width: 1300px;
+}
+
+.banners img {
+    display: block;
+}
+
+.banner {
+    position: relative;
+    width: 50%;
+    cursor: pointer;
+}
+
+.banner .banners {
+  border: 0;
+}
+
+.banner__properties {
+    position: absolute;
+    top: 20%;
+    right: 9%;
+}
+
+.banner__title {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2.8em;
+    font-weight: 700;
+}
+
+.banner__description {
+  padding-top: 10px;
+  text-align: center;
+  font-family: 'Times New Roman', sans-serif;
+  font-style: italic;
+  font-size: 1.6em;
+  color: #757575;
+}
+
+.banner__left .banner__properties,
+.banner__right .banner__properties {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  top: 70%;
+  right: 0;
+  text-align: center;
+}
+
+.banners__catalog .banner__title,
+.banners__catalog .banner__description {
+  color: #ffffff;
+}
+
+.banner__right .banner__title {
+  color: #f14a58;
+}
+
+.banner__right .banner__description {
+  color: #757575;
+}
+
+.banner__item-link {
+  display: block;
+}
+
+.banner__item-link img {
+    display: block;
+    width: 100%;
+}
+
+.banners__catalog {
+  margin: 0 auto;
+  max-width: 1300px;
+}
+
+.banner__tablet {
+  display: none;
+}
+
+@media (min-width:768px) and (max-width:1023px) {
+  .banners.wrap {
+    width: 100%;
+  }
+
+  .banners__catalog .banner:nth-child(1) {
+    width: calc(100% / 3 * 2);
+  }
+
+  .banners__catalog .banner:nth-child(2) {
+    width: calc(100% / 3);
+  }
+
+  .banners__catalog .banner.banner__left {
+    width: 100%;
+  }
+
+  .banners__catalog .banner__right {
+    display: none;
+  }
+
+  .banner__index {
+    width: calc(100% / 3 * 2);
+  }
+
+  .banner__desktop {
+    display: none;
+  }
+
+  .banner__tablet {
+    display: block;
+    width: calc(100% / 3);
+  }
+}
+
+@media (max-width:767px) {
+  .banner__index {
+    width: 100%;
+  }
+  .banner__desktop {
+    display: none;
+  }
+
+  .banner__title {
+    font-size: 2.2em;
+  }
+
+  .banners__catalog .banner {
+    width: 100%;
+  }
+
+  .banners__catalog .banner:nth-child(2) {
+    display: none;
+  }
+}
