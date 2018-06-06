@@ -31,3 +31,13 @@
   font-weight: 700;
   font-size: 1.8em;
 }
+
+@media (max-width: 767px) {
+  .bag_clear {
+    margin-left: 0;
+  }
+
+  .bag_total {
+    margin-right: 0;
+  }
+}

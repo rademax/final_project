@@ -74,6 +74,12 @@
     background: #f14a58;
 }
 
+@media (min-width:768px) and (max-width:1023px) {
+  .slider__list--arrow {
+    display: none;
+  }
+}
+
 @media (max-width: 767px) {
   .slider__list--arrow {
     display: none;

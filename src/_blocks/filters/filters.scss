@@ -6,6 +6,7 @@
 }
 
 .filters__list {
+  height: 65px;
   padding-left: 0;
   font-size: 0;
 }
@@ -13,28 +14,50 @@
 .filters__list>li {
   position: relative;
   display: inline-block;
-  padding: 20px 0;
+  padding: 15px 0;
   width: calc(17% - 4px);
   vertical-align: middle;
   border-left: 1px solid transparent;
   border-right: 1px solid transparent;
-  //border: 1px solid #e5e5e5;
-  //border-right: 0;
 }
 
-.filters__list>li:last-child {
-  //border-right: 1px solid #e5e5e5;
+.filters__list>li:after {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 49%;
+  right: 5%;
+  width: 5px;
+  height: 5px;
+  background: url('../img/icon_select.png') no-repeat;
 }
 
 .filter__name {
   padding-left: 20px;
   font-size: 16px;
+  cursor: pointer;
+}
+
+.filters__sub-list .active {
+  color: #f14a58;
+}
+
+.filter__name.active {
+  font-size: 12px;
+}
+
+.filter__selected {
+  padding-left: 20px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #f14a58;
 }
 
 .filters__sub-list {
   position: absolute;
   display: none;
-  top: 62px;
+  top: 57px;
   left: -1px;
   width: calc(100% + 2px);
   padding-left: 0;
@@ -48,6 +71,7 @@
   list-style: none;
   display: block;
   padding: 8px 20px;
+  cursor: pointer;
 }
 
 .filters__sub-list li:hover {
@@ -62,4 +86,16 @@
 
 .filters__list>li:hover .filters__sub-list {
   display: block;
+}
+
+@media (min-width:768px) and (max-width:1023px) {
+  .filters {
+    display: none;
+  }
+}
+
+@media (max-width:767px) {
+  .filters {
+    display: none;
+  }
 }
