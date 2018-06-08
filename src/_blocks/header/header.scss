@@ -188,10 +188,12 @@
     position: absolute;
     display: none;
     width: 100%;
+    min-height: 100vh;
     top: -5px;
     left: 0;
     background: #ffffff;
     z-index: 100;
+    overflow: hidden;
   }
 
   .menu__list li {

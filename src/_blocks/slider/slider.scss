@@ -75,12 +75,36 @@
 }
 
 @media (min-width:768px) and (max-width:1023px) {
+  .slider__item-link {
+    display: flex;
+    justify-content: center;
+    height: 769px;
+    overflow: hidden;
+  }
+
+  .slider__item-link img {
+    width: auto;
+  }
+
   .slider__list--arrow {
     display: none;
   }
 }
 
 @media (max-width: 767px) {
+  .slider__item-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 474px;
+    overflow: hidden;
+  }
+
+  .slider__item-link img {
+    height: 100%;
+    width: auto;
+  }
+
   .slider__list--arrow {
     display: none;
   }
