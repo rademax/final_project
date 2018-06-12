@@ -59,8 +59,10 @@ let slider = {
 };
 
 window.onload = function() {
+  if(document.getElementsByClassName('slider')[0]) {
     slider.init();
     timer = slideChange();
+  }
 };
 
 function slideChange() {
