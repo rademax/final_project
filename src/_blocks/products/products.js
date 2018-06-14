@@ -50,6 +50,7 @@ function addProductsOnPage(products = catalog) {
     productsList.innerHTML += formProductItem(product);
   }
   productsHtml.appendChild(productsList);
+  console.log(productsHtml);
   productsHtml.innerHTML += addShowMoreButton();
 }
 
