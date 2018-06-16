@@ -25,33 +25,44 @@ if(addToBagButton) {
   };
 }
 
-function addToCart(productId, parameters = []) {
-  let product = getProduct();
+function addToCart(productId, params = {count: 'plus', color: null, size: null}) {
+  let product = getProduct(productId);
 
-  let products = getCartProductIds();
+  let products = getCartProducts();
   let sum = getCartProductSum();
   let count = getCartProductCount();
-  let productInCartFounded = false;
+  let productIdInCartIfFound = null;
 
-  let productForCart = {id: productId, count: 1};
+  let productForCart = {
+    id: productId,
+    count: 1,
+    color: params.color,
+    size: params.size
+  };
 
-  if(products.count !== 0 && sum && count) {
+  if(products.length !== 0 && sum && count) {
     for(let i = 0; i < products.length; i++) {
       let prod = products[i];
-      if(prod.id === productId) {
-        prod.count++;
-        productInCartFounded = true;
+      if(prod.id === productId && prod.color === params.color && prod.size === params.size) {
+        prod.count = changeCount(prod.count, params.count);
+        productIdInCartIfFound = i;
         break;
       }
     }
   }
 
-  if(!productInCartFounded) {
+  if(productIdInCartIfFound == null) {
     products.push(productForCart);
   }
 
-  sum += (product.price === product.discountedPrice) ? product.price : product.discountedPrice;
-  count++;
+  if(productIdInCartIfFound != null && products[productIdInCartIfFound].count === 0) {
+    console.log('It is good');
+    products = deleteProductFromCart(products, productId);
+  }
+
+  let price = (product.price === product.discountedPrice) ? product.price : product.discountedPrice;
+  sum = changePrice(sum, price, params.count);
+  count = changeCount(count, params.count);
 
   console.log(products);
   console.log(sum);
@@ -64,7 +75,34 @@ function addToCart(productId, parameters = []) {
   updateCartSumAndCountInHeader();
 }
 
-function getCartProductIds() {
+function deleteProductFromCart(productsCart, productId) {
+  let newProductsArr = [];
+  for(let i = 0; i < productsCart.length; i++) {
+    let product = productsCart[i];
+    if(product.id === productId) {
+      continue;
+    }
+    newProductsArr.push(product);
+  }
+  console.log(newProductsArr);
+  return newProductsArr;
+}
+
+function changeCount(value, param) {
+  if(param === 'plus') {
+    return ++value;
+  }
+  return --value;
+}
+
+function changePrice(sum, value, param) {
+  if(param === 'plus') {
+    return sum+value;
+  }
+  return sum-value;
+}
+
+function getCartProducts() {
   let lsCartProducts = localStorage.getItem('cartProductIds');
   if(lsCartProducts) {
     return JSON.parse(lsCartProducts);
@@ -94,11 +132,14 @@ function getProductId() {
   if (!!regexp.exec(document.location.search)) {
     value = regexp.exec(document.location.search)[1];
   }
+  console.log(value);
   return value;
 }
 
-function getProduct() {
-  let id = getProductId();
+function getProduct(id = null) {
+  if(!id) {
+    id = getProductId();
+  }
   for(let i = 0; i < catalog.length; i++) {
     let product = catalog[i];
     if(id === product.id) {

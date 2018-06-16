@@ -22,9 +22,7 @@ function addProductsOnPage(products = catalog) {
     if(i === productsCountOnRow) {
       productsList.innerHTML += addPromoBanner();
     }
-    if(!product.price) {
-      continue;
-    }
+
     productsList.innerHTML += formProductItem(product);
   }
   productsHtml.appendChild(productsList);

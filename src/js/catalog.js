@@ -11,7 +11,7 @@ window.catalog = [{
     fashion: 'Casual style',
     colors: [],
     sizes: [],
-    thumbnail: 'img/item/item-page-1.jpg', // replace with path to image extracted from catalog layout
+    thumbnail: 'img/new_products/product1.jpg', // replace with path to image extracted from catalog layout
     preview: ['img/item/item-page-1.jpg', 'img/item/item-page-2.jpg', 'img/item/item-page-3.jpg'] // replace with paths to images extracted from item layout
 }, {
     id: '07cf6ce2-6eee-4e78-a441-f257fdea7ed6',
@@ -26,7 +26,7 @@ window.catalog = [{
     fashion: 'Casual style',
     colors: [],
     sizes: [],
-    thumbnail: 'img/item/item-page-1.jpg', // replace with image extracted from item layout
+    thumbnail: 'img/new_products/product1.jpg', // replace with image extracted from item layout
     preview: ['img/item/item-page-1.jpg', 'img/item/item-page-2.jpg', 'img/item/item-page-3.jpg'] // replace with paths to images extracted from item layout
 }, {
     id: '0fdfa061-838d-42ab-ae06-99c66115f633',
@@ -41,7 +41,7 @@ window.catalog = [{
     fashion: 'Casual style',
     colors: [],
     sizes: [],
-    thumbnail: 'img/item/item-page-1.jpg', // replace with image extracted from item layout
+    thumbnail: 'img/new_products/product1.jpg', // replace with image extracted from item layout
     preview: ['img/item/item-page-1.jpg', 'img/item/item-page-2.jpg', 'img/item/item-page-3.jpg'] // replace with paths to images extracted from item layout
 }, {
     id: '4a3d3c3e-9dc5-4d99-b33d-42b22e20dc0b',
@@ -56,7 +56,7 @@ window.catalog = [{
     fashion: 'Nail the 90s',
     colors: [],
     sizes: [],
-    thumbnail: 'img/item/item-page-1.jpg', // replace with image extracted from item layout
+    thumbnail: 'img/new_products/product1.jpg', // replace with image extracted from item layout
     preview: ['img/item/item-page-1.jpg', 'img/item/item-page-2.jpg', 'img/item/item-page-3.jpg'] // replace with paths to images extracted from item layout
 }, {
     id: '5677f851-1c4a-4e9b-80e9-16d1e6265257',
@@ -71,7 +71,7 @@ window.catalog = [{
     fashion: 'Casual style',
     colors: [],
     sizes: [],
-    thumbnail: 'img/item/item-page-1.jpg', // replace with image extracted from item layout
+    thumbnail: 'img/new_products/product1.jpg', // replace with image extracted from item layout
     preview: ['img/item/item-page-1.jpg', 'img/item/item-page-2.jpg', 'img/item/item-page-3.jpg'] // replace with paths to images extracted from item layout
 }, {
     id: '739d3ae0-6dca-4453-a7a4-a94b841a296d',
@@ -86,7 +86,7 @@ window.catalog = [{
     fashion: 'Casual style',
     colors: [],
     sizes: [],
-    thumbnail: 'img/item/item-page-1.jpg', // replace with image extracted from item layout
+    thumbnail: 'img/new_products/product1.jpg', // replace with image extracted from item layout
     preview: ['img/item/item-page-1.jpg', 'img/item/item-page-2.jpg', 'img/item/item-page-3.jpg'] // replace with paths to images extracted from item layout
 }, {
     id: '80d32566-d81c-4ba0-9edf-0eceda3b4360',
@@ -101,7 +101,7 @@ window.catalog = [{
     fashion: 'Classical style',
     colors: ['Black', 'Blue'],
     sizes: ['UK 52', 'UK 54', 'UK 56'],
-    thumbnail: 'img/item/item-page-1.jpg', // replace with image extracted from item layout
+    thumbnail: 'img/new_products/product1.jpg', // replace with image extracted from item layout
     preview: ['img/item/item-page-1.jpg', 'img/item/item-page-2.jpg', 'img/item/item-page-3.jpg'] // replace with paths to images extracted from item layout
 }, {
     id: '8b300772-eee3-4ff1-b091-e89f17e0e469',
@@ -117,7 +117,7 @@ window.catalog = [{
     colors: [],
     colors: [],
     sizes: [],
-    thumbnail: 'img/item/item-page-1.jpg', // replace with image extracted from item layout
+    thumbnail: 'img/new_products/product1.jpg', // replace with image extracted from item layout
     preview: ['img/item/item-page-1.jpg', 'img/item/item-page-2.jpg', 'img/item/item-page-3.jpg'] // replace with paths to images extracted from item layout
 }, {
     id: '8c061815-6a7d-4465-bb78-1bdc6c5adebf',
@@ -132,7 +132,7 @@ window.catalog = [{
     fashion: 'Casual style',
     colors: [],
     sizes: [],
-    thumbnail: 'img/item/item-page-1.jpg', // replace with image extracted from item layout
+    thumbnail: 'img/new_products/product1.jpg', // replace with image extracted from item layout
     preview: ['img/item/item-page-1.jpg', 'img/item/item-page-2.jpg', 'img/item/item-page-3.jpg'] // replace with paths to images extracted from item layout
 }, {
     id: '9ded7821-e510-4a16-ba9f-57c1e3442ad8',
@@ -147,7 +147,7 @@ window.catalog = [{
     fashion: 'Casual style',
     colors: [],
     sizes: [],
-    thumbnail: 'img/item/item-page-1.jpg', // replace with image extracted from item layout
+    thumbnail: 'img/new_products/product1.jpg', // replace with image extracted from item layout
     preview: ['img/item/item-page-1.jpg', 'img/item/item-page-2.jpg', 'img/item/item-page-3.jpg'] // replace with paths to images extracted from item layout
 }, {
     id: 'bec71daa-d133-473d-bbb0-1ee0a427a17d',
@@ -162,7 +162,7 @@ window.catalog = [{
     fashion: 'Casual style',
     colors: [],
     sizes: [],
-    thumbnail: 'img/item/item-page-1.jpg', // replace with image extracted from item layout
+    thumbnail: 'img/new_products/product1.jpg', // replace with image extracted from item layout
     preview: ['img/item/item-page-1.jpg', 'img/item/item-page-2.jpg', 'img/item/item-page-3.jpg'] // replace with paths to images extracted from item layout
 }, {
     id: 'ccc8a5d5-7cdf-4706-95f2-abc64761400d',
@@ -177,7 +177,7 @@ window.catalog = [{
     fashion: 'Casual style',
     colors: [],
     sizes: [],
-    thumbnail: 'img/item/item-page-1.jpg', // replace with image extracted from item layout
+    thumbnail: 'img/new_products/product1.jpg', // replace with image extracted from item layout
     preview: ['img/item/item-page-1.jpg', 'img/item/item-page-2.jpg', 'img/item/item-page-3.jpg'] // replace with paths to images extracted from item layout
 }, {
     id: 'e50a3153-7833-4b85-b412-1a39d215fd38',
@@ -192,7 +192,7 @@ window.catalog = [{
     fashion: 'Casual style',
     colors: [],
     sizes: [],
-    thumbnail: 'img/item/item-page-1.jpg', // replace with image extracted from item layout
+    thumbnail: 'img/new_products/product1.jpg', // replace with image extracted from item layout
     preview: ['img/item/item-page-1.jpg', 'img/item/item-page-2.jpg', 'img/item/item-page-3.jpg'] // replace with paths to images extracted from item layout
 }, {
     id: 'ff665110-5e7f-435d-b1b4-651c3d5050ca',
@@ -207,6 +207,6 @@ window.catalog = [{
     fashion: 'Casual style',
     colors: [],
     sizes: [],
-    thumbnail: 'img/item/item-page-1.jpg', // replace with image extracted from item layout
+    thumbnail: 'img/new_products/product1.jpg', // replace with image extracted from item layout
     preview: ['img/item/item-page-1.jpg', 'img/item/item-page-2.jpg', 'img/item/item-page-3.jpg'] // replace with paths to images extracted from item layout
 }];
