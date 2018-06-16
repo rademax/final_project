@@ -1,13 +1,17 @@
 let productsHtml = document.getElementsByClassName('products')[0];
 let productsCountGlobal = performProductsCount();
 
-window.addEventListener("resize", function () {
-  let addBanner = checkProductsCountChanges();
-  if(addBanner) {
-    clearProductsFromPage();
-    addProductsOnPage();
-  }
-});
+if(productsHtml) {
+  addProductsOnPage();
+
+  window.addEventListener("resize", function () {
+    let addBanner = checkProductsCountChanges();
+    if(addBanner) {
+      clearProductsFromPage();
+      addProductsOnPage();
+    }
+  });
+}
 
 function addProductsOnPage(products = catalog) {
   let productsList = document.createElement("div");
@@ -17,6 +21,9 @@ function addProductsOnPage(products = catalog) {
     let product = products[i];
     if(i === productsCountOnRow) {
       productsList.innerHTML += addPromoBanner();
+    }
+    if(!product.price) {
+      continue;
     }
     productsList.innerHTML += formProductItem(product);
   }
@@ -33,11 +40,11 @@ function formProductItem(product) {
     <div class="products__item">
       <div class="products__img">
         <img src="img/new_products/product1.jpg" alt="${product.title}">
-        <div class="products__hover"><a href="item.html" class="products__hover-link">View item</a></div>
+        <div class="products__hover"><a href="item.html?id=${product.id}" class="products__hover-link">View item</a></div>
       </div>
       ${(product.hasNew) ? hasNew() : ''}
       <div class="products__item-title">
-        <a class="products__link" href="item.html">${product.title}</a>
+        <a class="products__link" href="item.html?id=${product.id}">${product.title}</a>
       </div>
       <div class="products__price">
         ${addPrice(product.price, product.discountedPrice)}
@@ -101,5 +108,3 @@ function checkProductsCountChanges() {
   }
   return false;
 }
-
-addProductsOnPage();

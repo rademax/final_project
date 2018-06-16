@@ -212,7 +212,7 @@
   }
 
   .products__item:hover .products__hover {
-    display: none;
+    width: 210px;
   }
 
   .bag-item__img {
@@ -269,7 +269,7 @@
   }
 
   .products__item:hover .products__hover {
-    display: none;
+    max-width: 210px;
   }
 
   .products__item:nth-child(3), .products__item:nth-child(4) {

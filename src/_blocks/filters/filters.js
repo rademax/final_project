@@ -10,8 +10,7 @@ if(filters) {
   };
 }
 
-function changeFilterItem(target) {
-  let filterItem = target;
+function changeFilterItem(filterItem) {
   let filter = filterItem.parentNode;
   let filterName = filter.parentNode.getElementsByClassName('filter__name')[0];
   let filterItems = filter.getElementsByTagName('li');

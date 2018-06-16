@@ -8,3 +8,15 @@ menu.onclick = function () {
     body.classList.add('overflow__hidden');
   }
 };
+
+let cartSum = document.querySelector('.bag-sum');
+let cartCount = document.querySelector('.bag-count');
+
+if(cartSum && cartCount) {
+  updateCartSumAndCountInHeader();
+}
+
+function updateCartSumAndCountInHeader() {
+  cartSum.innerHTML = "£" + getCartProductSum();
+  cartCount.innerHTML = getCartProductCount();
+}

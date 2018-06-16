@@ -38,9 +38,24 @@
   font-size: 1.6em;
 }
 
-.product__price {
+.product__prices {
   padding: 45px 0;
   font-size: 2.5em;
+}
+
+.product__old-price {
+  display: inline;
+  color: #757575;
+}
+
+.product__discount {
+  display: inline;
+  color: #757575;
+  font-style: italic;
+}
+
+.product__price {
+  display: inline;
 }
 
 .product__filter {
