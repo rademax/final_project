@@ -20,13 +20,23 @@ function addProductsOnPage(products = catalog) {
   for(let i = 0; i < products.length; i++) {
     let product = products[i];
     if(i === productsCountOnRow) {
+      if(document.querySelector('.products__new')) {
+        break;
+      }
       productsList.innerHTML += addPromoBanner();
     }
 
-    productsList.innerHTML += formProductItem(product);
+    if(product.price) {
+      productsList.innerHTML += formProductItem(product);
+    }
   }
   productsHtml.appendChild(productsList);
-  productsHtml.innerHTML += addShowMoreButton();
+
+  if(document.querySelector('.products__new')) {
+    productsHtml.innerHTML += addAllProductsButton();
+  } else {
+    productsHtml.innerHTML += addShowMoreButton();
+  }
 }
 
 function clearProductsFromPage() {
@@ -96,6 +106,10 @@ function addPromoBanner() {
 
 function addShowMoreButton() {
   return `<a class="btn products__all-products" href="#">Show more</a>`;
+}
+
+function addAllProductsButton() {
+  return `<a class="btn products__all-products" href="catalog.html">All arrivals</a>`;
 }
 
 function checkProductsCountChanges() {

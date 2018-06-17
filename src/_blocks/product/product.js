@@ -21,30 +21,27 @@ if(productFilters) {
 if(addToBagButton) {
   addToBagButton.onclick = function () {
     let productId = getProductId();
-    addToCart(productId);
+    let params = getProductParams();
+    addToCart(productId, params);
   };
 }
+
 
 function addToCart(productId, params = {count: 'plus', color: null, size: null}) {
   let product = getProduct(productId);
 
   let products = getCartProducts();
-  let sum = getCartProductSum();
-  let count = getCartProductCount();
+  let totalSum = getCartProductSum();
+  let totalCount = getCartProductCount();
   let productIdInCartIfFound = null;
+  let productCountInCartIfFound = null;
 
-  let productForCart = {
-    id: productId,
-    count: 1,
-    color: params.color,
-    size: params.size
-  };
-
-  if(products.length !== 0 && sum && count) {
+  if(products.length !== 0 && totalSum && totalCount) {
     for(let i = 0; i < products.length; i++) {
       let prod = products[i];
       if(prod.id === productId && prod.color === params.color && prod.size === params.size) {
-        prod.count = changeCount(prod.count, params.count);
+        productCountInCartIfFound = prod.count;
+        prod.count = changeCount(prod.count, params.count, productCountInCartIfFound);
         productIdInCartIfFound = i;
         break;
       }
@@ -52,54 +49,84 @@ function addToCart(productId, params = {count: 'plus', color: null, size: null})
   }
 
   if(productIdInCartIfFound == null) {
+    let productForCart = formProductForCart(productId, 1, params.color, params.size);
     products.push(productForCart);
   }
 
   if(productIdInCartIfFound != null && products[productIdInCartIfFound].count === 0) {
-    console.log('It is good');
-    products = deleteProductFromCart(products, productId);
+    products = deleteProductFromCart(products, productId, params);
   }
 
-  let price = (product.price === product.discountedPrice) ? product.price : product.discountedPrice;
-  sum = changePrice(sum, price, params.count);
-  count = changeCount(count, params.count);
+  let price = performPrice(product.price, product.discountedPrice);
 
-  console.log(products);
-  console.log(sum);
-  console.log(count);
+  totalSum = changeTotalSum(totalSum, price, params.count, productCountInCartIfFound);
+  totalSum = checkNumber(totalSum);
+  totalCount = roundNumber(totalCount, params.count, productCountInCartIfFound);
 
+  if(totalCount === 0) {
+    products = [];
+    totalSum = 0;
+  }
+
+  saveToLocalStorage(products, totalSum, totalCount);
+}
+
+function roundNumber(number) {
+  return Math.round(number * 100) / 100;
+}
+
+function performPrice(price, discountedPrice) {
+  if(price === discountedPrice) {
+    return price;
+  }
+  return discountedPrice;
+}
+
+function formProductForCart(id, count, color, size) {
+  return {
+    id: id,
+    count: count,
+    color: color,
+    size: size
+  };
+}
+
+function saveToLocalStorage(products, sum, count) {
   localStorage.setItem('cartProductIds', JSON.stringify(products));
   localStorage.setItem('cartProductSum', JSON.stringify(sum));
   localStorage.setItem('cartProductCount', JSON.stringify(count));
-
   updateCartSumAndCountInHeader();
+  updateCartSumInBagPage();
 }
 
-function deleteProductFromCart(productsCart, productId) {
+function deleteProductFromCart(productsCart, productId, params) {
   let newProductsArr = [];
   for(let i = 0; i < productsCart.length; i++) {
     let product = productsCart[i];
-    if(product.id === productId) {
+    if(product.id === productId && product.color === params.color && product.size === params.size) {
       continue;
     }
     newProductsArr.push(product);
   }
-  console.log(newProductsArr);
   return newProductsArr;
 }
 
-function changeCount(value, param) {
-  if(param === 'plus') {
-    return ++value;
+function changeCount(value, param, productCountInCart) {
+  if(param === 'minus') {
+    return --value;
+  } else if(param === 'remove') {
+    return value - productCountInCart;
   }
-  return --value;
+  return ++value;
 }
 
-function changePrice(sum, value, param) {
-  if(param === 'plus') {
-    return sum+value;
+function changeTotalSum(sum, value, param, productCountInCart) {
+  if(param === 'minus') {
+    return sum - value;
+  } else if(param === 'remove') {
+    return sum - (value * productCountInCart);
   }
-  return sum-value;
+  return sum + value;
 }
 
 function getCartProducts() {
@@ -132,7 +159,6 @@ function getProductId() {
   if (!!regexp.exec(document.location.search)) {
     value = regexp.exec(document.location.search)[1];
   }
-  console.log(value);
   return value;
 }
 
@@ -216,7 +242,7 @@ function addFilters(parameters, title) {
   }
   let parametersHtml = `<div class="product__filter">
         <div class="product__filter-name">${title}:</div>
-        <ul class="product__filter-list">
+        <ul class="product__filter-list" id="${title.toLowerCase()}">
    `;
   for(let i = 0; i < parameters.length; i++) {
     let parameter = parameters[i];
@@ -235,4 +261,10 @@ function changeProductFilter(filterItem) {
   let filterItems = filterItem.parentNode.getElementsByTagName('li');
   deactivateFilterItems(filterItems);
   activateFilterItem(filterItem);
+}
+
+function getProductParams() {
+  let color = document.querySelector('#color .active');
+  let size = document.querySelector('#size .active');
+  return setProductParams(color, size);
 }

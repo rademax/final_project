@@ -197,6 +197,11 @@
   z-index: 5;
 }
 
+.bag__message {
+  padding: 40px 0 100px;
+  font-size: 2em;
+  text-align: center;
+}
 
 @media (min-width:768px) and (max-width:1023px) {
   .products__item {
