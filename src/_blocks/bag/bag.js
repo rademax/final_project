@@ -102,7 +102,7 @@ function formBagProductItem(product, productCartParams) {
 }
 
 function changeProductQuantity(target) {
-  let params = {};
+  let params;
   let count = 'plus';
   let productId;
   if(target.classList.contains('bag__quantity-minus')) {

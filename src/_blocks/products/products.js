@@ -7,16 +7,19 @@ if(productsHtml) {
   window.addEventListener("resize", function () {
     let addBanner = checkProductsCountChanges();
     if(addBanner) {
-      clearProductsFromPage();
       addProductsOnPage();
     }
   });
 }
 
 function addProductsOnPage(products = catalog) {
+  clearProductsFromPage();
   let productsList = document.createElement("div");
   let productsCountOnRow = performProductsCount();
   productsList.classList.add("products__list");
+
+  sortByDate(products);
+
   for(let i = 0; i < products.length; i++) {
     let product = products[i];
     if(i === productsCountOnRow) {
@@ -25,10 +28,7 @@ function addProductsOnPage(products = catalog) {
       }
       productsList.innerHTML += addPromoBanner();
     }
-
-    if(product.price) {
-      productsList.innerHTML += formProductItem(product);
-    }
+    productsList.innerHTML += formProductItem(product);
   }
   productsHtml.appendChild(productsList);
 
@@ -37,6 +37,12 @@ function addProductsOnPage(products = catalog) {
   } else {
     productsHtml.innerHTML += addShowMoreButton();
   }
+}
+
+function sortByDate(products) {
+  products.sort(function(product1,product2){
+    return new Date(product2.dateAdded) - new Date(product1.dateAdded);
+  });
 }
 
 function clearProductsFromPage() {
@@ -55,13 +61,13 @@ function formProductItem(product) {
         <a class="products__link" href="item.html?id=${product.id}">${product.title}</a>
       </div>
       <div class="products__price">
-        ${addPrice(product.price, product.discountedPrice)}
+        ${addPrice(product.price, product.discountedPrice, product.placeholder)}
       </div>
   </div>
   `;
 }
 
-function addPrice(price, discountedPrice) {
+function addPrice(price, discountedPrice, placeholder) {
   if(price !== discountedPrice) {
     return `
       <div class="products__old-price">£${price}</div>
@@ -69,7 +75,7 @@ function addPrice(price, discountedPrice) {
       <div class="products__current-price">£${discountedPrice}</div>
     `;
   }
-  return `<div class="products__current-price">£${price}</div>`;
+  return `<div class="products__current-price">${(price !== null) ? '£' + price : placeholder}</div>`;
 }
 
 function performDiscount(price, discountedPrice) {
@@ -119,4 +125,22 @@ function checkProductsCountChanges() {
     return true;
   }
   return false;
+}
+
+function filterProducts(filter, param) {
+  let products = [];
+  filter = filter.toLowerCase();
+  for(let i = 0; i < catalog.length; i++) {
+    let catProduct = catalog[i];
+    if(typeof catProduct[filter] === 'object') {
+      for(let j = 0; j < catProduct[filter].length; j++) {
+        if(catProduct[filter][j] === param) {
+          products.push(catProduct);
+        }
+      }
+    } else if(catProduct[filter] === param) {
+      products.push(catProduct);
+    }
+  }
+  addProductsOnPage(products);
 }

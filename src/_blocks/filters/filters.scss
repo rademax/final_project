@@ -58,6 +58,7 @@
   font-weight: 700;
   font-size: 16px;
   color: #f14a58;
+  text-transform: capitalize;
 }
 
 .filters__sub-list {
@@ -78,6 +79,7 @@
   display: block;
   padding: 8px 20px;
   cursor: pointer;
+  text-transform: capitalize;
 }
 
 .filters__sub-list li:hover {

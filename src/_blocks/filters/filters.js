@@ -19,10 +19,13 @@ function changeFilterItem(filterItem) {
     return 0;
   }
 
+  filterProducts(filterName.innerHTML, filterItem.innerHTML);
+
   deactivateFilterItems(filterItems);
   activateFilterItem(filterItem);
 
   if(filterItem.innerHTML === 'Not selected') {
+    addProductsOnPage();
     deleteBlockAboutActiveFilter(filterItem);
     toggleActiveItem(filterName);
     return 0;

@@ -65,6 +65,8 @@ window.addEventListener('load', function () {
   }
 });
 
+
+
 function slideChange() {
   return setInterval(function() {
     slider.right();

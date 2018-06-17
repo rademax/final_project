@@ -60,8 +60,8 @@ function addToCart(productId, params = {count: 'plus', color: null, size: null})
   let price = performPrice(product.price, product.discountedPrice);
 
   totalSum = changeTotalSum(totalSum, price, params.count, productCountInCartIfFound);
-  totalSum = checkNumber(totalSum);
-  totalCount = roundNumber(totalCount, params.count, productCountInCartIfFound);
+  totalSum = roundNumber(totalSum);
+  totalCount = changeCount(totalCount, params.count, productCountInCartIfFound);
 
   if(totalCount === 0) {
     products = [];
@@ -187,7 +187,8 @@ function formProductAlbum(product) {
   productAlbumHtml.classList.add('product__album');
   productAlbumHtml.innerHTML = `
       <div class="product__album-main">
-        <img src="${product.thumbnail}" alt="${product.title}" class="product__main-photo">
+        ${(product.hasNew) ? hasNew() : ''}
+        <img src="${product.preview[0]}" alt="${product.title}" class="product__main-photo">
       </div>
       <div class="product__album-additional">
         ${productAdditionalPhoto(product.title, product.preview)}
@@ -204,14 +205,14 @@ function formProductContent(product) {
     <div class="product__information-main">
       <div class="product__description">${product.description}</div>
       <div class="product__prices">
-        ${addPriceForItem(product.price, product.discountedPrice)}
+        ${addPriceForItem(product.price, product.discountedPrice, product.placeholder)}
       </div>
     </div>
     <div class="product__filters">
       ${addFilters(product.sizes, 'Size')}
       ${addFilters(product.colors, 'Color')}
     </div>
-    <div class="btn product__add-to-bag">Add to bag</div>
+    ${(product.price !== null) ? '<div class="btn product__add-to-bag">Add to bag</div>' : ''}
   `;
   return productInfoHtml;
 }
@@ -220,12 +221,12 @@ function productAdditionalPhoto(title, photos) {
   let photosHtml = '';
   for(let i = 0; i < photos.length; i++) {
     let photo = photos[i];
-    photosHtml += `<div class="product__additional-photo"><img src="${photo}" alt="Additional photo for ${title}"></div>`;
+    photosHtml += `<div class="product__additional-photo${(i === 0) ? ' active' : ''}"><img src="${photo}" alt="Additional photo for ${title}"></div>`;
   }
   return photosHtml;
 }
 
-function addPriceForItem(price, discountedPrice) {
+function addPriceForItem(price, discountedPrice, placeholder) {
   if(price !== discountedPrice) {
     return `
       <div class="product__old-price">£${price}</div>
@@ -233,7 +234,7 @@ function addPriceForItem(price, discountedPrice) {
       <div class="product__price">£${discountedPrice}</div>
     `;
   }
-  return `<div class="product__price">£${price}</div>`;
+  return `<div class="product__price">${(price !== null) ? '£' + price : 'Not available'}</div>`;
 }
 
 function addFilters(parameters, title) {
@@ -267,4 +268,37 @@ function getProductParams() {
   let color = document.querySelector('#color .active');
   let size = document.querySelector('#size .active');
   return setProductParams(color, size);
+}
+
+let productAlbumHtml = document.querySelector('.product__album');
+
+if(productAlbumHtml) {
+  productAlbumHtml.addEventListener('click', function (event) {
+    let target = event.target;
+    if(target.tagName === 'IMG') {
+      changeProductMainImage(target);
+    }
+  });
+}
+
+function changeProductMainImage(target) {
+  let img = target;
+  let imgUrl = img.src;
+
+  while(target.className !== 'product__album') {
+    target = target.parentNode;
+  }
+
+  let additionalPhotos = target.querySelectorAll('.product__additional-photo');
+
+  for(let i = 0; i < additionalPhotos.length; i++) {
+    let additionalPhoto = additionalPhotos[i];
+    if(additionalPhoto.classList.contains('active')) {
+      additionalPhoto.classList.remove('active');
+    }
+  }
+
+  img.parentNode.classList.add('active');
+  let mainPhoto = target.querySelector('.product__main-photo');
+  mainPhoto.src = imgUrl;
 }
