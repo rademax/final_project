@@ -28,6 +28,9 @@ function addProductsOnPage(products = catalog) {
       }
       productsList.innerHTML += addPromoBanner();
     }
+    if(i === 12) {
+      break;
+    }
     productsList.innerHTML += formProductItem(product);
   }
   productsHtml.appendChild(productsList);
@@ -53,7 +56,7 @@ function formProductItem(product) {
   return `
     <div class="products__item">
       <div class="products__img">
-        <img src="img/new_products/product1.jpg" alt="${product.title}">
+        <img src="${product.thumbnail}" alt="${product.title}">
         <div class="products__hover"><a href="item.html?id=${product.id}" class="products__hover-link">View item</a></div>
       </div>
       ${(product.hasNew) ? hasNew() : ''}

@@ -79,6 +79,7 @@ function formBagProductItem(product, productCartParams) {
   return `
     <div class="bag-item" id="${product.id}">
       <div class="bag-item__img">
+        ${(product.hasNew) ? hasNew() : ''}
         <img src="${product.thumbnail}" alt="${product.title}">
         <div class="bag-item__hover"><a href="item.html?id=${product.id}" class="products__hover-link">View item</a></div>
       </div>

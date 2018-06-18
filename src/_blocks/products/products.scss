@@ -212,10 +212,6 @@
     width: 210px;
   }
 
-  .products__item:nth-child(4) {
-    display: none;
-  }
-
   .products__item:hover .products__hover {
     width: 210px;
   }
@@ -275,10 +271,6 @@
 
   .products__item:hover .products__hover {
     max-width: 210px;
-  }
-
-  .products__item:nth-child(3), .products__item:nth-child(4) {
-    display: none;
   }
 
   .products__all-products {
