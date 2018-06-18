@@ -58,10 +58,14 @@ let slider = {
     }
 };
 
-window.onload = function() {
+window.addEventListener('load', function () {
+  if(document.getElementsByClassName('slider')[0]) {
     slider.init();
     timer = slideChange();
-};
+  }
+});
+
+
 
 function slideChange() {
   return setInterval(function() {

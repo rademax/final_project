@@ -32,6 +32,10 @@
   font-size: 1.8em;
 }
 
+.bag_clear {
+  cursor: pointer;
+}
+
 @media (max-width: 767px) {
   .bag_clear {
     margin-left: 0;

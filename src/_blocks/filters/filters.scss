@@ -6,7 +6,7 @@
 }
 
 .filters__list {
-  height: 65px;
+  //height: 65px;
   padding-left: 0;
   font-size: 0;
 }
@@ -14,6 +14,7 @@
 .filters__list>li {
   position: relative;
   display: inline-block;
+  height: 60px;
   padding: 15px 0;
   width: calc(17% - 4px);
   vertical-align: middle;
@@ -33,9 +34,14 @@
 }
 
 .filter__name {
+  padding-top: 7px;
   padding-left: 20px;
   font-size: 16px;
   cursor: pointer;
+}
+
+.filter__name.active {
+  padding-top: 0;
 }
 
 .filters__sub-list .active {
@@ -52,12 +58,13 @@
   font-weight: 700;
   font-size: 16px;
   color: #f14a58;
+  text-transform: capitalize;
 }
 
 .filters__sub-list {
   position: absolute;
   display: none;
-  top: 57px;
+  top: 60px;
   left: -1px;
   width: calc(100% + 2px);
   padding-left: 0;
@@ -72,6 +79,7 @@
   display: block;
   padding: 8px 20px;
   cursor: pointer;
+  text-transform: capitalize;
 }
 
 .filters__sub-list li:hover {
