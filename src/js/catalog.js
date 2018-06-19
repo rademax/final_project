@@ -55,7 +55,7 @@ window.catalog = [{
     category: 'women',
     fashion: 'Nail the 90s',
     colors: [],
-    sizes: ['UK 42', 'UK 44', 'UK 46'],
+    sizes: ['UK 42', 'UK 50'],
     thumbnail: 'img/new_products/product3.jpg', // replace with image extracted from item layout
     preview: ['img/item/item-page-1.jpg', 'img/item/item-page-2.jpg', 'img/item/item-page-3.jpg'] // replace with paths to images extracted from item layout
 }, {
@@ -114,8 +114,8 @@ window.catalog = [{
     hasNew: true,
     category: 'women',
     fashion: 'Casual style',
-    colors: ['Black', 'Blue', 'Red', 'Green'],
-    sizes: ['UK 42', 'UK 44', 'UK 46'],
+    colors: ['Blue', 'Red', 'Green'],
+    sizes: ['UK 46'],
     thumbnail: 'img/new_products/product2.jpg', // replace with image extracted from item layout
     preview: ['img/item/item-page-1.jpg', 'img/item/item-page-2.jpg', 'img/item/item-page-3.jpg'] // replace with paths to images extracted from item layout
 }, {
@@ -130,7 +130,7 @@ window.catalog = [{
     category: 'women',
     fashion: 'Casual style',
     colors: ['Black', 'Blue', 'Red', 'Green'],
-    sizes: ['UK 42', 'UK 44', 'UK 46'],
+    sizes: ['UK 44', 'UK 46', 'UK 50'],
     thumbnail: 'img/new_products/product1.jpg', // replace with image extracted from item layout
     preview: ['img/item/item-page-1.jpg', 'img/item/item-page-2.jpg', 'img/item/item-page-3.jpg'] // replace with paths to images extracted from item layout
 }, {
@@ -160,7 +160,7 @@ window.catalog = [{
     category: 'women',
     fashion: 'Casual style',
     colors: [],
-    sizes: [],
+    sizes: ['UK 42', 'UK 46'],
     thumbnail: 'img/new_products/product12.jpg', // replace with image extracted from item layout
     preview: ['img/item/item-page-1.jpg', 'img/item/item-page-2.jpg', 'img/item/item-page-3.jpg'] // replace with paths to images extracted from item layout
 }, {
@@ -175,7 +175,7 @@ window.catalog = [{
     category: 'women',
     fashion: 'Casual style',
     colors: [],
-    sizes: [],
+    sizes: ['UK 50'],
     thumbnail: 'img/new_products/product8.jpg', // replace with image extracted from item layout
     preview: ['img/item/item-page-1.jpg', 'img/item/item-page-2.jpg', 'img/item/item-page-3.jpg'] // replace with paths to images extracted from item layout
 }, {
@@ -190,7 +190,7 @@ window.catalog = [{
     category: 'women',
     fashion: 'Casual style',
     colors: [],
-    sizes: [],
+    sizes: ['UK 42', 'UK 50', 'UK 52', 'UK 54'],
     thumbnail: 'img/new_products/product10.jpg', // replace with image extracted from item layout
     preview: ['img/item/item-page-1.jpg', 'img/item/item-page-2.jpg', 'img/item/item-page-3.jpg'] // replace with paths to images extracted from item layout
 }, {
@@ -205,7 +205,7 @@ window.catalog = [{
     category: 'women',
     fashion: 'Casual style',
     colors: [],
-    sizes: [],
+    sizes: ['UK 44', 'UK 46'],
     thumbnail: 'img/new_products/product11.jpg', // replace with image extracted from item layout
     preview: ['img/item/item-page-1.jpg', 'img/item/item-page-2.jpg', 'img/item/item-page-3.jpg'] // replace with paths to images extracted from item layout
 }];
