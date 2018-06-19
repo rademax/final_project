@@ -29,7 +29,6 @@ if(productsBagHtml) {
       addThankYouMessage();
       return 0;
     }
-
   });
 }
 
@@ -110,6 +109,10 @@ function changeProductQuantity(target) {
     count = 'minus';
   }
   if(target.classList.contains('bag-item__remove')) {
+    let deleteProduct = formConfirmMessageToDeleteProduct();
+    if(!deleteProduct) {
+      return 0;
+    }
     count = 'remove';
   }
   target = foundProductOnCartPage(target);
@@ -148,4 +151,8 @@ function setProductParams(color, size) {
   (color) ? params.color = color.innerHTML : '';
   (size) ? params.size = size.innerHTML : '';
   return params;
+}
+
+function formConfirmMessageToDeleteProduct() {
+  return confirm('Are you sure that you want to remove item(s)?');
 }
