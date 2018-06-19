@@ -188,7 +188,7 @@ function formProductAlbum(product) {
   productAlbumHtml.innerHTML = `
       <div class="product__album-main">
         ${(product.hasNew) ? hasNew() : ''}
-        <img src="${product.preview[0]}" alt="${product.title}" class="product__main-photo">
+        <img src="${product.thumbnail}" alt="${product.title}" class="product__main-photo">
       </div>
       <div class="product__album-additional">
         ${productAdditionalPhoto(product.title, product.preview)}
